@@ -2,8 +2,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-</head>
+	<script src="js/zepto.js"></script>
+	</head>
 <body>
-    test
-</body>
+    <button id="silly">Do it</button>
+	<button id="clear">Clear</button>
+	<div id="results"></div>
+	
+	<script>
+	var SILLY = (function(m) {
+		
+			m.DoIt = function (r){
+				r.prepend(Date() + '<br />');
+			};
+		
+			return m;
+		}(SILLY || {}));
+	
+		$('#silly').click( function () {
+			SILLY.DoIt($('#results'));
+		});
+		
+		$('#clear').click( function () {
+			$('#results').html('');
+		});
+		
+		
+	</script>
+
+	</body>
 </html>
